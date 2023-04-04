@@ -169,18 +169,18 @@ footer b{
     margin-top: 4px;
 }
 input{
-   padding:17px 0;
-   border-radius: 4px;
-   border:1px solid grey;
+   border:none;
+   font-size: 12px;
+   font-weight: 500;
 }
-footer button{
-    position: relative;
-    top:00px;
-    left:0;
+input:focus{
+   outline:none;
 }
 .email{
-    border-style: solid;
-    position: relative;
+    border:1px grey solid;
+    padding:2px 3px 2px 10px;
+    border-radius: 4px;
+    margin-top: 4px;
 }
 .try b{
     font-size: 14px;
