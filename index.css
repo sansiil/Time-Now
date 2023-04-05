@@ -17,7 +17,6 @@
     align-items: center;
 }
 body{
-    padding:4%;
     height:100vh;
 }
 ul{
@@ -53,6 +52,13 @@ nav img{
 }
 img{
     width:40px;
+}
+.lightblue{
+    padding:2% 4%;
+    background:linear-gradient(to left,rgb(107, 196, 255)55%,white 45%);
+}
+.post{
+    padding-top: 2%;
 }
 .posts{
     width:50%;
@@ -91,11 +97,7 @@ img{
 }
 .post__right {
    width:60%;
-   border-style: solid;
    justify-content: center;
-}
-.post{
-    border-style: solid;
 }
 .post__right img{
     width:80%;
@@ -106,7 +108,7 @@ img{
     display: none;
 }
 .people{
-    padding:3% 0;
+    padding:3% 4%;
 }
 .people h1{
     color:rgb(2, 2, 90);
@@ -125,20 +127,18 @@ img{
     width:45ch;
 }
 .blue{
-    border-style: solid;
-    padding:2% 0 7px 0;
+    padding:2% 4%;
     gap:12%;
+    background: rgba(132, 251, 255, 0.404);
 }
 b{
     color:rgb(50, 50, 209);
     font-size: 14px;
 }
-.blue__left{
-    border-style: solid;
-}
 .blue h1{
     max-width:19ch;
     font-size: 2.2rem;
+    color:rgba(2, 26, 32, 0.747);
 }
 .blue p{
     max-width:45ch;
@@ -150,15 +150,16 @@ b{
 .blue a{
    font-weight: 700; 
 }
+footer{
+    padding:2% 4%;
+}
 footer img{
     width:30px;
 }
 .down{
-    border-style: solid;
     padding:1.5% 0;
 }
 .features{
-    border-style: solid;
     gap:40px;
 }
 footer b{
