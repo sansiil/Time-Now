@@ -183,9 +183,17 @@ input:focus{
     border-radius: 4px;
     margin-top: 4px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap:14px;
+    gap:4px;
+}
+.email input{
+    min-width:12ch;
+    flex-basis:0;
+    height:40px;
+    flex-grow: 1;
+}
+.email button {
+    width:fit-content;
 }
 .try b{
     font-size: 14px;
@@ -228,13 +236,10 @@ input:focus{
         justify-content: center;
         height:350px;
         padding:30px 0 20px 0 ;
-        border-style: solid;
         margin-top: 20px;
     }
     .post__right img{
         height:100%;
-        border-style: solid;
-
     }
     .posts{
         padding:40px 0  0;
@@ -263,10 +268,6 @@ input:focus{
     .features{
         padding:20px 0;
         row-gap: 17px;
-    }
-    .email input{
-        min-width:100px;
-        border-style: solid;
     }
 }
 @media (min-width:500.1px) and (max-width:1000px){
