@@ -62,6 +62,7 @@ img{
 }
 .posts{
     width:50%;
+    padding-top:4%;
 }
 .posts h1{
     font-size: 3rem;
@@ -101,7 +102,6 @@ img{
 }
 .post__right img{
     width:80%;
-    position: relative;
     height:490px;
 }
 .ham{
@@ -182,6 +182,10 @@ input:focus{
     padding:2px 3px 2px 10px;
     border-radius: 4px;
     margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:14px;
 }
 .try b{
     font-size: 14px;
@@ -196,7 +200,7 @@ input:focus{
     nav{
         align-items: center;
     }
-    ul li a,nav button{
+    ul li ,nav button{
         display: none;
     }
     nav button{
@@ -210,7 +214,7 @@ input:focus{
         grid-template-columns: 1fr 1fr;
     }
     .lightblue{
-        background:linear-gradient(to top,rgb(107, 196, 255) 50%,white 20%);
+        background:linear-gradient(to top,rgb(107, 196, 255) 350px,white 20%);
         padding-bottom: 0;
     }
     .posts,.post__right,.people__left,.people__right{
@@ -221,21 +225,22 @@ input:focus{
         gap:7px;
     }
     .post__right{
-        border-style: solid;
         justify-content: center;
         height:350px;
         padding:30px 0 20px 0 ;
+        border-style: solid;
+        margin-top: 20px;
     }
     .post__right img{
-        object-fit: contain;
+        height:100%;
+        border-style: solid;
+
     }
     .posts{
-        border-style: solid;
         padding:40px 0  0;
     }
     .people{
         padding:30px 4%;
-        border-style: solid;
     }
     .people__right p{
         width:100%;
@@ -255,11 +260,74 @@ input:focus{
     .posts H1,.people__left h1{
         font-size: 2rem;
     }
-    .email{
-        display: flex;
-    }
     .features{
         padding:20px 0;
         row-gap: 17px;
+    }
+    .email input{
+        min-width:100px;
+        border-style: solid;
+    }
+}
+@media (min-width:500.1px) and (max-width:1000px){
+    .posts{
+        width:47%;
+    }
+    .posts h1{
+        font-size: 1.8rem;
+    }
+    .posts>p{
+        margin:10px 0;
+    }
+    .post__button{
+        flex-direction: column;
+        gap:12px;
+        width:fit-content;    
+    }
+    .posts figure{
+      align-items: start;
+      padding:15px 0;
+    }
+    .post__right{
+        justify-content: center;
+    }
+    .post__right img{
+        height:300px;
+    }
+    .lightblue{
+        background:linear-gradient(to left,rgb(107, 196, 255)53%,white 47%);
+    }
+    .people{
+        flex-direction: column;
+        padding-top: 5%;
+    }
+    .people__left{
+        flex-direction: row;
+        width:100%;
+        justify-content: start;
+        align-items: start;
+    }
+    .people__left h1{
+        width:18ch;
+    }
+    .people__right p{
+        width:80%;
+        margin:2% 0;
+    }
+    .people__left figure{
+        flex-wrap:wrap;
+        margin:0;
+    }
+    .blue{
+        flex-direction: column;
+        gap:30px;
+    }
+    .blue p{
+        max-width:80%;
+    }
+    .down{
+        flex-direction: column;
+        gap:20px;
+        width:fit-content;
     }
 }
