@@ -26,11 +26,9 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
         document.querySelector('.lightblue').style.background="white";
         
     });
-    const footer=document.querySelector('footer')
-    footer.style.position='absolute';
-    footer.style.bottom='-250px';
-    footer.style.left='0';
-    footer.style.right='0';
+    
+
+    
 
 
     const sec=document.createElement('section');
@@ -155,6 +153,12 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
 
 
     document.body.appendChild(sec);
+
+    const footer=document.querySelector('footer');
     
+    footer.parentNode.insertBefore(sec,footer);
 
 });
+
+
+  
