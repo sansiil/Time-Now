@@ -14,23 +14,28 @@
 //      naya.innerHTML="adhdjjdjddj";
 //      document.body.appendChild(naya);
 // })
+ 
 
-
+// when prcing is clicked, this function is activated
 
 document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
-    const sections=document.querySelectorAll('section');
+    // every section is selected and filtered
+    //const sections=document.querySelectorAll('section');
+    //section without lightblue class is selected which is better
+    const sections=document.querySelectorAll('section:not(.lightblue)');
+
+    // sections.forEach(elem=>{
+    //     if(!elem.classList.contains('lightblue')){
+    //         elem.style.display='none';
+    //     }
+    //     document.querySelector('.lightblue').style.background="white";
+   
+    // });
+    //elem is all the section in html except lightblue section.
     sections.forEach(elem=>{
-        if(!elem.classList.contains('lightblue')){
-            elem.style.display='none';
-        }
-        document.querySelector('.lightblue').style.background="white";
-        
-    });
-    
-
-    
-
-
+           elem.style.display='none';});
+    document.querySelector('.lightblue').style.background="white";
+    //new section is created
     const sec=document.createElement('section');
     sec.classList='df column sec';
 
@@ -41,40 +46,61 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     const sec__item2=document.createElement('div');
     sec__item2.classList=' cards df';
 
-    sec.appendChild(sec__item1);
-    sec.appendChild(sec__item2);
+    sec.append(sec__item1,sec__item2);
 
-    const h1=document.createElement('h1')
-    h1.innerText='Flexible Plans for Everyone.';
-
-    const p=document.createElement('p');
-    p.innerText='Our plans are made for everyone. Whether you\'re'+
-                 ' just starting out on social media, or have been on'+
-                 ' there for a long time, we have a plan that\'s right for you.';
-
-    const bill=document.createElement('div');
-    bill.classList='df bill'
+    // sec.appendChild(sec__item1);
+    // sec.appendChild(sec__item2);down better if multiple items to add
     
-    const bold=document.createElement('b');
-    bold.innerText='Billed Monthly';
 
-    const bill__toogle=document.createElement('div');
-    bill__toogle.classList='toggle';
+    //sec__item1 js
+    //innerhtml better
+    sec__item1.innerHTML=`
+    <h1>Flexible Plans for Everyone.</h1>
+    <p>Our plans are made for everyone. Whether you're just starting out
+        on social media, or have been on there for a long time, we have
+         a plan that's right for you.
+    </p>
+    <div class="df bill">
+    <b>Billed Monthly</b>
+    <div class="toggle">
+        <div class="ball"></div>
+    </div>
+    <p>Billed Yearly</p></div>
+    `;
 
-    const toogle__ball=document.createElement('div');
-    toogle__ball.classList='ball';
+    //sec__item1 longer version
+    // const h1=document.createElement('h1')
+    // h1.innerText='Flexible Plans for Everyone.';
 
-    bill__toogle.appendChild(toogle__ball);
+    // const p=document.createElement('p');
+    // p.innerText='Our plans are made for everyone. Whether you\'re'+
+    //              ' just starting out on social media, or have been on'+
+    //              ' there for a long time, we have a plan that\'s right for you.';
 
-
-
-    const bill_p=document.createElement('p');
-    bill_p.innerText='Billed Yearly';
-
-    bill.append(bold,bill__toogle,bill_p);
+    // const bill=document.createElement('div');
+    // bill.classList='df bill'
     
-    sec__item1.append(h1,p,bill);
+    // const bold=document.createElement('b');
+    // bold.innerText='Billed Monthly';
+
+    // const bill__toogle=document.createElement('div');
+    // bill__toogle.classList='toggle';
+
+    // const toogle__ball=document.createElement('div');
+    // toogle__ball.classList='ball';
+
+    // bill__toogle.appendChild(toogle__ball);
+
+
+
+    // const bill_p=document.createElement('p');
+    // bill_p.innerText='Billed Yearly';
+
+    // bill.append(bold,bill__toogle,bill_p);
     
+    // sec__item1.append(h1,p,bill);
+ 
+    //sec__item2 js
     const cards=document.createElement('div');
     cards.classList='cards df column';
     
@@ -98,31 +124,38 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     }];
      cards__names.forEach(elem=>{
         
-        const card=document.createElement('div');
-        card.classList='card df column';
+         const card=document.createElement('div');
+         card.classList='card df column';
         
-        const card__top=document.createElement('div');
-        card__top.classList='card__top df column';
+         const card__top=document.createElement('div');
+         card__top.classList='card__top df column';
         
-        const h4=document.createElement('h2');
-        h4.classList='price';
+        //individually creating tags is hectic
+        //down is better
+        // const h4=document.createElement('h2');
+        // h4.classList='price';
 
-        const span=document.createElement('span');
-        span.innerText='/mo';
+        // const span=document.createElement('span');
+        // span.innerText='/mo';
 
-        h4.innerText=elem.price;
-        h4.appendChild(span);
+        // h4.innerText=elem.price;
+        // h4.appendChild(span);
 
-        const p=document.createElement('p');
-        p.innerText=elem.caption;
+        // const p=document.createElement('p');
+        // p.innerText=elem.caption;
 
-        card__top.append(h4,p);
-
-
+        // card__top.append(h4,p);
         
+        //better and simple
+        card__top.innerHTML = `
+             <h2 class="price">${elem.price}
+             <span>/mo</span>
+             </h2>
+             <p>${elem.caption}</p>
+            `;
 
         // cards features add 
-
+        
         const div=document.createElement('div');
         div.classList='card__mid df column';
         
@@ -131,27 +164,31 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
             const figure=document.createElement('figure');
             figure.classList='feature df';
 
-            const img=document.createElement('img');
-            img.src='Assets/Checkmark.svg';
+            // const img=document.createElement('img');
+            // img.src='Assets/Checkmark.svg';
 
-            const feat=document.createElement('p');
-            feat.innerText=e;
+            // const feat=document.createElement('p');
+            // feat.innerText=e;
 
-            figure.append(img,feat);
+            // figure.append(img,feat);
+
+            figure.innerHTML=`
+                  <img src="Assets/Checkmark.svg">
+                  <p>${e}</p>
+            `;
             div.appendChild(figure);
+            
         });
         
         const button=document.createElement('button');
         button.innerText='Subscribe Now';
 
-
+        //sec__item2 cards, each card is made and appended each time
         card.append(card__top,div,button);
         sec__item2.appendChild(card);
-     })
+    });
 
-
-
-
+    
     document.body.appendChild(sec);
 
     const footer=document.querySelector('footer');
@@ -159,6 +196,3 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     footer.parentNode.insertBefore(sec,footer);
 
 });
-
-
-  

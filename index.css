@@ -345,7 +345,7 @@ input:focus{
         line-height: 1;
     }
     footer{
-        padding:40px 4%;
+        padding:40px 4% 5px 4%;
     }
     .posts H1,.people__left h1{
         font-size: 2rem;
