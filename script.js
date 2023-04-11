@@ -196,3 +196,27 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     footer.parentNode.insertBefore(sec,footer);
 
 });
+
+document.querySelector('.ham').addEventListener('click', ()=>{
+
+    const li=document.body.querySelectorAll('li');
+    const buttonc=document.body.querySelector('button');
+    const ul=document.body.querySelector('ul');
+    console.log(buttonc.style.display)
+    if(buttonc.style.display==='none' || buttonc.style.display===''){
+        buttonc.style.display='flex';
+        li.forEach(elem=>{
+            elem.style.display='flex'
+        });
+        ul.style.height='150px';
+        ul.style.padding='4% 0';
+    }
+    else{
+        buttonc.style.display='';
+        li.forEach(elem=>{
+            elem.style.display='';
+        });
+        ul.style.height='0';
+        ul.style.padding='0';
+    };
+});
