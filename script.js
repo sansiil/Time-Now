@@ -62,9 +62,10 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     </p>
     <div class="df bill">
     <b>Billed Monthly</b>
-    <div class="toggle">
-        <div class="ball"></div>
-    </div>
+    <label class="switch">
+        <input type="checkbox">
+        <span class=" slider ball"></span>
+    </label>
     <p>Billed Yearly</p></div>
     `;
 
@@ -180,6 +181,7 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
             
         });
         
+        
         const button=document.createElement('button');
         button.innerText='Subscribe Now';
 
@@ -196,6 +198,8 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     footer.parentNode.insertBefore(sec,footer);
 
 });
+
+
 
 document.querySelector('.ham').addEventListener('click', ()=>{
 
