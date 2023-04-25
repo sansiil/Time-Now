@@ -107,19 +107,19 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     
     const cards__names=[{
         name:'card1',
-        price:'$7',
+        price:'7',
         caption:'Perfect plan if you\'re'+' just starting out.',
         features:['LinkedIn Integration','Twitter Integration','Real-time Analytics']
     },
     {
         name:'card2',
-        price:'$12',
+        price:'12',
         caption:'Perfect plan if you\'re'+' a heavy user of social media.',
         features:['LinkedIn Integration','Twitter Integration','Instagram Integration','Real-time Analytics']
     },
     {
         name:'card3',
-        price:'$4',
+        price:'4',
         caption:'Perfect plan if you\'re'+'just starting out.',
         features:['LinkedIn Integration','Twitter Integration']
     }];
@@ -149,7 +149,7 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
         
         //better and simple
         card__top.innerHTML = `
-             <h2 class="price">${elem.price}
+             <h2 class="price">$${elem.price}
              <span>/mo</span>
              </h2>
              <p>${elem.caption}</p>
@@ -197,10 +197,49 @@ document.querySelector('ul li:nth-child(2) a').addEventListener('click',()=>{
     
     footer.parentNode.insertBefore(sec,footer);
 
+
+
+    //for input checkbox
+    const check=document.querySelector('input[type="checkbox"]');
+
+    //change is to see if anythings happens for input checkbox
+    check.addEventListener('change',()=>{
+        if(check.checked){
+            let i=0;
+            //if checked will go through
+            //each cards and changes price and span to yr
+             document.querySelectorAll('.card').forEach(card=>{
+                const p=card.querySelector('.price');
+    
+                p.outerHTML=`
+                <h2 class="price">$${cards__names[i].price*10}
+                <span>/yr</span>
+                </h2>
+                `;
+                i++;
+                
+             });
+        }
+        //while unchecked
+        else{
+            let i=0;
+            document.querySelectorAll('.card').forEach(card=>{
+                
+                const p=card.querySelector('.price');
+
+                p.outerHTML=`
+                <h2 class="price">$${cards__names[i].price}
+                <span>/mo</span>
+                </h2>
+                `;
+                i++;
+            });
+        };
+    });
 });
 
 
-
+//ham burger when clicked
 document.querySelector('.ham').addEventListener('click', ()=>{
 
     const li=document.body.querySelectorAll('li');
@@ -224,3 +263,5 @@ document.querySelector('.ham').addEventListener('click', ()=>{
         ul.style.padding='0';
     };
 });
+
+
